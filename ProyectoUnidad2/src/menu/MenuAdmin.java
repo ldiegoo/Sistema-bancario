@@ -1,46 +1,44 @@
 package menu;
 
 import cine.Cine;
-import usuario.administrador.Administrador;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class MenuAdmin {
     final Scanner input = new Scanner(System.in);
-    Cine cine = new Cine();
+    static Cine cine = new Cine();
 
-
-
-    public int mostrarMenu() {
+    public void mostrarMenu() {
         int opcion=0;
 
-        System.out.println("BIENVENIDO QUERIDO ADMINISTRADOR");
-        System.out.println("1. Registrar Cinepolito");
-        System.out.println("2. Listar Cinepolito");
-        System.out.println("3. Eliminar Cinepolito");
-        System.out.println("4. Registrar Cliente");
-        System.out.println("5. Listar Cliente");
-        System.out.println("6. Eliminar Cliente");
-        System.out.println("7. Agregar Funciones");
-        System.out.println("8. Modificar Funciones");
-        System.out.println("9. Listar Funciones");
-        System.out.println("10. Eliminar Funciones");
-        System.out.println("11. Mirar Boletos");
-        System.out.println("12. Mirar Productos");
-        System.out.println("13. Eliminar Productos");
-        System.out.println("14. Mirar carrito");
-        System.out.println("13. Revisar disponibilidad de la sala");
-        System.out.println("14. Listar salas");
-        System.out.println("15. Agregar Promociones");
-        System.out.println("16. Modificar Promociones");
-        System.out.println("17. Eliminar Promociones");
-        System.out.println("18. Cerrar Sesion");
+        while(opcion!=5){
+            System.out.println("***BIENVENIDO QUERIDO ADMINISTRADOR***");
+            System.out.println("1. Registrar Cinepolito");
+            System.out.println("2. Listar Cinepolito");
+            System.out.println("3. Eliminar Cinepolito");
+            System.out.println("4. Registrar Cliente");
+            System.out.println("5. Listar Cliente");
+            System.out.println("6. Eliminar Cliente");
+            System.out.println("7. Agregar Funciones");
+            System.out.println("8. Modificar Funciones");
+            System.out.println("9. Listar Funciones");
+            System.out.println("10. Eliminar Funciones");
+            System.out.println("11. Mirar Boletos");
+            System.out.println("12. Mirar Productos");
+            System.out.println("13. Eliminar Productos");
+            System.out.println("14. Mirar carrito");
+            System.out.println("13. Revisar disponibilidad de la sala");
+            System.out.println("14. Listar salas");
+            System.out.println("15. Agregar Promociones");
+            System.out.println("16. Modificar Promociones");
+            System.out.println("17. Eliminar Promociones");
+            System.out.println("18. Cerrar Sesion");
 
-        System.out.println("\nSelecciona una opcion: ");
-        opcion=input.nextInt();
-        return opcion;
+            System.out.println("\nSelecciona una opcion: ");
+            opcion=input.nextInt();
+        }
     }
+
     public void ejecutarMenuAdmin(int opcion){
         switch (opcion){
             case 1:System.out.println("Seleccionaste la opcion de registrar cinepolito");
@@ -68,13 +66,11 @@ public class MenuAdmin {
                 LocalDate fechaRegistro = LocalDate.now();
                 LocalDate fechaActual = LocalDate.now();
 
-
                 int antiguedad = fechaRegistro.getYear() - fechaActual.getYear();
                 LocalDate fechaNacimiento = LocalDate.of(anioNacimiento, mesNacimiento, diaNacimiento);
-                String idCliente= cine.generarIdTrabajador(apellido, nombre, String.valueOf(fechaNacimiento));
+                String IdTrabajor = cine.generarIdTrabajador(apellido, nombre, String.valueOf(fechaNacimiento));
+                cine.registrarTrabajador(rfc, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contraseña, antiguedad);
 
-
-                //String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad
                 break;
             case 2:
                 System.out.println("Seleccionaste la opcion de listar cinepolito");
@@ -130,6 +126,5 @@ public class MenuAdmin {
                 break;
         }
     }
-
 
 }

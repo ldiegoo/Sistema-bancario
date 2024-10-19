@@ -9,17 +9,17 @@ public class  Usuario {
     public String apellido;
     public LocalDate fechaNacimiento;
     public String direccion;
-    public String contraseña;
+    public String contrasenia;
     public Rol rol;
 
     // Constructor
-    public Usuario(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String contraseña, Rol rol) {
+    public Usuario(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String contrasenia, Rol rol) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
         this.rol = rol;
     }
 
@@ -69,11 +69,11 @@ public class  Usuario {
     }
 
     public String getContraseña() {
-        return this.contraseña;
+        return this.contrasenia;
     }
 
     public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+        this.contrasenia = contraseña;
     }
 
     public Rol getRol() {
