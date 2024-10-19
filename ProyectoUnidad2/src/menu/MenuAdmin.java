@@ -1,10 +1,14 @@
 package menu;
 
+import cine.Cine;
+import usuario.administrador.Administrador;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class MenuAdmin {
     final Scanner input = new Scanner(System.in);
+    Cine cine = new Cine();
 
 
 
@@ -67,6 +71,8 @@ public class MenuAdmin {
 
                 int antiguedad = fechaRegistro.getYear() - fechaActual.getYear();
                 LocalDate fechaNacimiento = LocalDate.of(anioNacimiento, mesNacimiento, diaNacimiento);
+                String idCliente= cine.generarIdTrabajador(apellido, nombre, String.valueOf(fechaNacimiento));
+
 
                 //String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad
                 break;

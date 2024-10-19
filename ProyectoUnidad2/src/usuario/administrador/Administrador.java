@@ -38,21 +38,7 @@ public class Administrador extends Usuario{
         );
     }
 
-    public void registrarTrabajador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
-        Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
-        cine.listaTrabajadores.add(trabajador);
-        System.out.println("Trabajador registrado con exito");
-    }
-    public void registrarAdministrador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
-        Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
-        cine.listaTrabajadores.add(trabajador);
-        System.out.println("Administrador registrado con exito");
-    }
-    public void registrarCliente(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
-        Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
-        cine.listaTrabajadores.add(trabajador);
-        System.out.println("Cliente registrado con exito");
-    }
+
 
     
     // Getters n Setters

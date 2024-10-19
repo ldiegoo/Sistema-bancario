@@ -90,6 +90,31 @@ public class Cine {
                 aleatorio,
                 lista);
     }
+    /*public Cliente obtenercurpCliente(String curpCliente) {
+        return listaClientes.stream().filter(c -> c.getCURP().equals(curpCliente)).findFirst().orElse(null);
+    }*/// No se si va esto
+
+    //    metodo para obtener el telefono del medico
+    public Trabajador obtenerTelefonoTrabajador(String telefonoTrabajador) {
+        return listaTrabajadores.stream().filter(t -> t.getTelefono().equals(telefonoTrabajador)).findFirst().orElse(null);
+    }
+    //    metodo para obtener el telefono del admin
+    public Administrador obtenerTelefonoAdmin(String telefonoAdmin) {
+        return listaAdmin.stream().filter(a -> a.getTelefono().equals(telefonoAdmin)).findFirst().orElse(null);
+    }
+
+    //    metodo para obtener el rfc del medico
+    public Trabajador obtenerRfcCliente(String rfc) {
+        return listaTrabajadores.stream().filter(t -> t.getRfc().equals(rfc)).findFirst().orElse(null);
+    }
+
+    //    metodo para obtener el rfc del admin
+    public Administrador obtenerRfcAdmin(String rfc) {
+        return listaAdmin.stream().filter(a -> a.getRfc().equals(rfc)).findFirst().orElse(null);
+    }
+
+
+
 
 
 
