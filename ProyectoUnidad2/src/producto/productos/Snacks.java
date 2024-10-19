@@ -10,8 +10,10 @@ public class Snacks extends Producto{
     }
 
     public void mostrarDatos(){
-        String.format("nombre: %s, precio: %.2f",
-                nombre,
-                precio);
+        String.format(
+            "nombre: %s, precio: %.2f",
+            nombre,
+            precio
+        );
     }
 }
