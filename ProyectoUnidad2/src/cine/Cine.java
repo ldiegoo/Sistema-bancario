@@ -4,6 +4,10 @@ import asiento.Asiento;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
+import pelicula.Pelicula;
+import pelicula.utils.Clasificacion;
+import pelicula.utils.Disponibilidad;
+import pelicula.utils.Genero;
 import usuario.Usuario;
 import usuario.administrador.Administrador;
 import usuario.cliente.Cliente;
@@ -15,6 +19,7 @@ public class Cine {
     public ArrayList<Cliente> listaClientes = new ArrayList<>();
     public ArrayList<Trabajador> listaTrabajadores = new ArrayList<>();
     public ArrayList<Asiento> listaAsientos = new ArrayList<>();
+    public ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
 
     // Constructores
     public Cine(ArrayList<Administrador> listaAdmin, ArrayList<Usuario> listaUsuarios, ArrayList<Cliente> listaClientes, ArrayList<Trabajador> listaTrabajadores, ArrayList<Asiento> listaAsientos) {
@@ -104,6 +109,12 @@ public class Cine {
         Cliente cliente = new Cliente(id, nombre, apellido, fechaNacimiento, direccion, CURP, totalFunciones, contrasenia);
         listaClientes.add(cliente);
         System.out.println("Cliente registrado con exito");
+    }
+
+    public void AgregarPelicula(String id, String titulo, String duracion, Genero genero, Clasificacion clasificacion, String sinopsis, Disponibilidad disponibilidad) {
+        Pelicula pelicula = new Pelicula(id, titulo, duracion, genero, clasificacion, sinopsis, disponibilidad);
+        listaPeliculas.add(pelicula);
+        System.out.println("Pelicula agregada con exito");
     }
 
 
