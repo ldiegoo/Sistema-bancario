@@ -101,8 +101,8 @@ public class Cine {
         listaAdmin.add(administrador);
         System.out.println("Administrador registrado con exito");
     }
-    public void registrarCliente(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String CURP, int totalFunciones, String contrasenia){
-        Cliente cliente = new Cliente(id, nombre, apellido, fechaNacimiento, direccion, CURP, totalFunciones, contrasenia);
+    public void registrarCliente(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String CURP, String contrasenia){
+        Cliente cliente = new Cliente(id, nombre, apellido, fechaNacimiento, direccion, CURP, contrasenia);
         listaClientes.add(cliente);
         System.out.println("Cliente registrado con exito");
     }
@@ -127,6 +127,13 @@ public class Cine {
     //    metodo para obtener el rfc del admin
     public Administrador obtenerRfcAdmin(String rfc) {
         return listaAdmin.stream().filter(a -> a.getRfc().equals(rfc)).findFirst().orElse(null);
+    }
+
+    //metodo para mostrar Trabajadores
+    public void mostrarTrabajadores(){
+        for(Trabajador t: listaTrabajadores){
+            System.out.println(Trabajador.mostrarDatos());// no se por que no se exportaaaaaaaaaaaaaa
+        }
     }
 
     // Getters n Setters

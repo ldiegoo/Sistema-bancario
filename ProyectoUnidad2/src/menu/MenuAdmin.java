@@ -45,7 +45,7 @@ public class MenuAdmin {
                 System.out.println("Ingresa el apellido del trabajador: ");
                 String apellido = input.nextLine();
                 System.out.println("Ingresa la fecha de nacimiento del trabajador: ");
-                System.out.println("Ingresa el año de nacimiento: ");
+                System.out.println("Año de nacimiento: ");
                 int anioNacimiento = input.nextInt();
                 System.out.println("Ingresa el mes de nacimiento: ");
                 int mesNacimiento = input.nextInt();
@@ -68,18 +68,40 @@ public class MenuAdmin {
                 int antiguedad = fechaRegistro.getYear() - fechaActual.getYear();
                 LocalDate fechaNacimiento = LocalDate.of(anioNacimiento, mesNacimiento, diaNacimiento);
                 String IdTrabajor = cine.generarIdTrabajador(apellido, nombre, String.valueOf(fechaNacimiento));
-                cine.registrarTrabajador(rfc, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contraseña, antiguedad);
+                cine.registrarTrabajador(IdTrabajor, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contraseña, antiguedad);
 
-                //String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad
                 break;
             case 2:
                 System.out.println("Seleccionaste la opcion de listar cinepolito");
+
                 break;
             case 3:
                 System.out.println("Seleccionaste la opcion de eliminar cinepolito");
                 break;
             case 4:
                 System.out.printf("Seleccionaste la opcion de registrar cliente");
+                System.out.println("Ingresa el nombre del cliente: ");
+                String nombreCliente = input.nextLine();
+                System.out.println("Ingresa el apellido del cliente: ");
+                String apellidoCliente = input.nextLine();
+                System.out.println("Ingresa la fecha de nacimiento del cliente: ");
+                System.out.println("Año de nacimiento del cliente: ");
+                int anioNacimientoCliente = input.nextInt();
+                System.out.println("Ingresa el mes de nacimiento del cliente: ");
+                int mesNacimientoCliente = input.nextInt();
+                System.out.println("Ingresa el dia de nacimiento del cliente: ");
+                int diaNacimientoCliente = input.nextInt();
+                System.out.println("Ingresa la direccion del cliente: ");
+                String direccionCliente = input.nextLine();
+                System.out.println("Ingresa el CURP del cliente: ");
+                String CURP = input.nextLine();
+                System.out.println("Ingresa la contraseña:");
+                String contrasenia = input.nextLine();
+
+                LocalDate fechaNacimientoCliente = LocalDate.of(anioNacimientoCliente, mesNacimientoCliente, diaNacimientoCliente);
+                String idCliente = cine.generarIdCliente(apellidoCliente, CURP);
+                cine.registrarCliente(idCliente, nombreCliente, apellidoCliente,fechaNacimientoCliente, direccionCliente, CURP,contrasenia );
+
                 break;
             case 5:
                 System.out.println("Seleccionaste la opcion de listar cliente");
