@@ -90,17 +90,21 @@ public class Cine {
                 aleatorio,
                 lista);
     }
-
-
-
-
-
-
-
-
-
-
-
+    public void registrarTrabajador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
+        Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
+        listaTrabajadores.add(trabajador);
+        System.out.println("Trabajador registrado con exito");
+    }
+    public void registrarAdministrador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String telefono, String contrasenia, double sueldo, String rfc, int antiguedad){
+        Administrador administrador = new Administrador(id, nombre, apellido, fechaNacimiento, telefono, contrasenia, sueldo, rfc, antiguedad);
+        listaAdmin.add(administrador);
+        System.out.println("Administrador registrado con exito");
+    }
+    public void registrarCliente(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String CURP, int totalFunciones, String contrasenia){
+        Cliente cliente = new Cliente(id, nombre, apellido, fechaNacimiento, direccion, CURP, totalFunciones, contrasenia);
+        listaClientes.add(cliente);
+        System.out.println("Cliente registrado con exito");
+    }
 
 
     // Getters n Setters

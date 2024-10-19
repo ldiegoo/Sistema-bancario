@@ -3,7 +3,6 @@ package usuario.administrador;
 import cine.Cine;
 import java.time.LocalDate;
 import usuario.Usuario;
-import usuario.trabajador.Trabajador;
 import utils.Rol;
 
 public class Administrador extends Usuario{
@@ -16,8 +15,8 @@ public class Administrador extends Usuario{
 
 
     // Constructor
-    public Administrador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String telefono, String contraseña, double sueldo, String rfc, int antiguedad) {
-        super(id, nombre, apellido, fechaNacimiento, telefono, contraseña, Rol.ADMIN);
+    public Administrador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String telefono, String contrasenia, double sueldo, String rfc, int antiguedad) {
+        super(id, nombre, apellido, fechaNacimiento, telefono, contrasenia, Rol.ADMIN);
         this.sueldo = sueldo;
         this.rfc = rfc;
         this.antiguedad = antiguedad;
@@ -38,21 +37,6 @@ public class Administrador extends Usuario{
         );
     }
 
-    public void registrarTrabajador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
-        Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
-        cine.listaTrabajadores.add(trabajador);
-        System.out.println("Trabajador registrado con exito");
-    }
-    public void registrarAdministrador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
-        Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
-        cine.listaTrabajadores.add(trabajador);
-        System.out.println("Administrador registrado con exito");
-    }
-    public void registrarCliente(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
-        Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
-        cine.listaTrabajadores.add(trabajador);
-        System.out.println("Cliente registrado con exito");
-    }
 
     
     // Getters n Setters
