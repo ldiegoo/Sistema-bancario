@@ -1,5 +1,4 @@
 package menu;
-
 import cine.Cine;
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -8,37 +7,36 @@ public class MenuAdmin {
     final Scanner input = new Scanner(System.in);
     static Cine cine = new Cine();
 
-    public void mostrarMenu() {
+
+    public int mostrarMenu() {
         int opcion=0;
 
-        while(opcion!=5){
-            System.out.println("***BIENVENIDO QUERIDO ADMINISTRADOR***");
-            System.out.println("1. Registrar Cinepolito");
-            System.out.println("2. Listar Cinepolito");
-            System.out.println("3. Eliminar Cinepolito");
-            System.out.println("4. Registrar Cliente");
-            System.out.println("5. Listar Cliente");
-            System.out.println("6. Eliminar Cliente");
-            System.out.println("7. Agregar Funciones");
-            System.out.println("8. Modificar Funciones");
-            System.out.println("9. Listar Funciones");
-            System.out.println("10. Eliminar Funciones");
-            System.out.println("11. Mirar Boletos");
-            System.out.println("12. Mirar Productos");
-            System.out.println("13. Eliminar Productos");
-            System.out.println("14. Mirar carrito");
-            System.out.println("13. Revisar disponibilidad de la sala");
-            System.out.println("14. Listar salas");
-            System.out.println("15. Agregar Promociones");
-            System.out.println("16. Modificar Promociones");
-            System.out.println("17. Eliminar Promociones");
-            System.out.println("18. Cerrar Sesion");
+        System.out.println("BIENVENIDO QUERIDO ADMINISTRADOR");
+        System.out.println("1. Registrar Cinepolito");
+        System.out.println("2. Listar Cinepolito");
+        System.out.println("3. Eliminar Cinepolito");
+        System.out.println("4. Registrar Cliente");
+        System.out.println("5. Listar Cliente");
+        System.out.println("6. Eliminar Cliente");
+        System.out.println("7. Agregar Funciones");
+        System.out.println("8. Modificar Funciones");
+        System.out.println("9. Listar Funciones");
+        System.out.println("10. Eliminar Funciones");
+        System.out.println("11. Mirar Boletos");
+        System.out.println("12. Mirar Productos");
+        System.out.println("13. Eliminar Productos");
+        System.out.println("14. Mirar carrito");
+        System.out.println("13. Revisar disponibilidad de la sala");
+        System.out.println("14. Listar salas");
+        System.out.println("15. Agregar Promociones");
+        System.out.println("16. Modificar Promociones");
+        System.out.println("17. Eliminar Promociones");
+        System.out.println("18. Cerrar Sesion");
 
-            System.out.println("\nSelecciona una opcion: ");
-            opcion=input.nextInt();
-        }
+        System.out.println("\nSelecciona una opcion: ");
+        opcion=input.nextInt();
+        return opcion;
     }
-
     public void ejecutarMenuAdmin(int opcion){
         switch (opcion){
             case 1:System.out.println("Seleccionaste la opcion de registrar cinepolito");
@@ -47,7 +45,7 @@ public class MenuAdmin {
                 System.out.println("Ingresa el apellido del trabajador: ");
                 String apellido = input.nextLine();
                 System.out.println("Ingresa la fecha de nacimiento del trabajador: ");
-                System.out.println("Ingresa el año de nacimiento: ");
+                System.out.println("Año de nacimiento: ");
                 int anioNacimiento = input.nextInt();
                 System.out.println("Ingresa el mes de nacimiento: ");
                 int mesNacimiento = input.nextInt();
@@ -66,19 +64,44 @@ public class MenuAdmin {
                 LocalDate fechaRegistro = LocalDate.now();
                 LocalDate fechaActual = LocalDate.now();
 
+
                 int antiguedad = fechaRegistro.getYear() - fechaActual.getYear();
                 LocalDate fechaNacimiento = LocalDate.of(anioNacimiento, mesNacimiento, diaNacimiento);
-                cine.registrarTrabajador(rfc, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contraseña, antiguedad);
+                String IdTrabajor = cine.generarIdTrabajador(apellido, nombre, String.valueOf(fechaNacimiento));
+                cine.registrarTrabajador(IdTrabajor, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contraseña, antiguedad);
 
                 break;
             case 2:
                 System.out.println("Seleccionaste la opcion de listar cinepolito");
+
                 break;
             case 3:
                 System.out.println("Seleccionaste la opcion de eliminar cinepolito");
                 break;
             case 4:
                 System.out.printf("Seleccionaste la opcion de registrar cliente");
+                System.out.println("Ingresa el nombre del cliente: ");
+                String nombreCliente = input.nextLine();
+                System.out.println("Ingresa el apellido del cliente: ");
+                String apellidoCliente = input.nextLine();
+                System.out.println("Ingresa la fecha de nacimiento del cliente: ");
+                System.out.println("Año de nacimiento del cliente: ");
+                int anioNacimientoCliente = input.nextInt();
+                System.out.println("Ingresa el mes de nacimiento del cliente: ");
+                int mesNacimientoCliente = input.nextInt();
+                System.out.println("Ingresa el dia de nacimiento del cliente: ");
+                int diaNacimientoCliente = input.nextInt();
+                System.out.println("Ingresa la direccion del cliente: ");
+                String direccionCliente = input.nextLine();
+                System.out.println("Ingresa el CURP del cliente: ");
+                String CURP = input.nextLine();
+                System.out.println("Ingresa la contraseña:");
+                String contrasenia = input.nextLine();
+
+                LocalDate fechaNacimientoCliente = LocalDate.of(anioNacimientoCliente, mesNacimientoCliente, diaNacimientoCliente);
+                String idCliente = cine.generarIdCliente(apellidoCliente, CURP);
+                cine.registrarCliente(idCliente, nombreCliente, apellidoCliente,fechaNacimientoCliente, direccionCliente, CURP,contrasenia );
+
                 break;
             case 5:
                 System.out.println("Seleccionaste la opcion de listar cliente");
@@ -125,5 +148,6 @@ public class MenuAdmin {
                 break;
         }
     }
+
 
 }

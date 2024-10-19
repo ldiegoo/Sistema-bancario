@@ -33,7 +33,6 @@ public class Cine {
     public Cine() {
     }
 
-
     // Metodos
     public String generarIdAdmin(String apellido, int antiguedad, String fechaNacimiento) {
         LocalDate fecha = LocalDate.now();
@@ -95,6 +94,7 @@ public class Cine {
                 aleatorio,
                 lista);
     }
+
     public void registrarTrabajador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
         Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
         listaTrabajadores.add(trabajador);
@@ -105,16 +105,43 @@ public class Cine {
         listaAdmin.add(administrador);
         System.out.println("Administrador registrado con exito");
     }
-    public void registrarCliente(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String CURP, int totalFunciones, String contrasenia){
-        Cliente cliente = new Cliente(id, nombre, apellido, fechaNacimiento, direccion, CURP, totalFunciones, contrasenia);
+    public void registrarCliente(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String CURP, String contrasenia){
+        Cliente cliente = new Cliente(id, nombre, apellido, fechaNacimiento, direccion, CURP, contrasenia);
         listaClientes.add(cliente);
         System.out.println("Cliente registrado con exito");
     }
+/*public Cliente obtenercurpCliente(String curpCliente) {
+        return listaClientes.stream().filter(c -> c.getCURP().equals(curpCliente)).findFirst().orElse(null);
+    }*/// No se si va esto
 
     public void AgregarPelicula(String id, String titulo, String duracion, Genero genero, Clasificacion clasificacion, String sinopsis, Disponibilidad disponibilidad) {
         Pelicula pelicula = new Pelicula(id, titulo, duracion, genero, clasificacion, sinopsis, disponibilidad);
         listaPeliculas.add(pelicula);
         System.out.println("Pelicula agregada con exito");
+    }
+
+    public Trabajador obtenerTelefonoTrabajador(String telefonoTrabajador) {
+        return listaTrabajadores.stream().filter(t -> t.getTelefono().equals(telefonoTrabajador)).findFirst().orElse(null);
+    }
+
+    public Administrador obtenerTelefonoAdmin(String telefonoAdmin) {
+        return listaAdmin.stream().filter(a -> a.getTelefono().equals(telefonoAdmin)).findFirst().orElse(null);
+    }
+
+    public Trabajador obtenerRfcCliente(String rfc) {
+        return listaTrabajadores.stream().filter(t -> t.getRfc().equals(rfc)).findFirst().orElse(null);
+    }
+
+    //    metodo para obtener el rfc del admin
+    public Administrador obtenerRfcAdmin(String rfc) {
+        return listaAdmin.stream().filter(a -> a.getRfc().equals(rfc)).findFirst().orElse(null);
+    }
+
+    //metodo para mostrar Trabajadores
+    public void mostrarTrabajadores(){
+        for(Trabajador t: listaTrabajadores){
+            t.mostrarDatos();
+        }
     }
 
 
