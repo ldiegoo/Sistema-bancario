@@ -90,6 +90,7 @@ public class Cine {
                 aleatorio,
                 lista);
     }
+
     public void registrarTrabajador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
         Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
         listaTrabajadores.add(trabajador);
