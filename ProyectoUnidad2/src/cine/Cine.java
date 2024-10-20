@@ -4,9 +4,9 @@ import asiento.Asiento;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 import pelicula.Pelicula;
 import pelicula.utils.Clasificacion;
-import pelicula.utils.Disponibilidad;
 import pelicula.utils.Genero;
 import usuario.Usuario;
 import usuario.administrador.Administrador;
@@ -20,6 +20,7 @@ public class Cine {
     public ArrayList<Trabajador> listaTrabajadores = new ArrayList<>();
     public ArrayList<Asiento> listaAsientos = new ArrayList<>();
     public ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
+    static Scanner input = new Scanner(System.in);
 
     // Constructores
     public Cine(ArrayList<Administrador> listaAdmin, ArrayList<Usuario> listaUsuarios, ArrayList<Cliente> listaClientes, ArrayList<Trabajador> listaTrabajadores, ArrayList<Asiento> listaAsientos) {
@@ -95,6 +96,7 @@ public class Cine {
                 lista);
     }
 
+    // REGISTRAR
     public void registrarTrabajador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
         Trabajador trabajador = new Trabajador(id, nombre, apellido, fechaNacimiento, direccion, rfc, sueldo, telefono, contrasenia, antiguedad);
         listaTrabajadores.add(trabajador);
@@ -110,16 +112,55 @@ public class Cine {
         listaClientes.add(cliente);
         System.out.println("Cliente registrado con exito");
     }
-/*public Cliente obtenercurpCliente(String curpCliente) {
-        return listaClientes.stream().filter(c -> c.getCURP().equals(curpCliente)).findFirst().orElse(null);
-    }*/// No se si va esto
 
-    public void AgregarPelicula(String id, String titulo, String duracion, Genero genero, Clasificacion clasificacion, String sinopsis, Disponibilidad disponibilidad) {
-        Pelicula pelicula = new Pelicula(id, titulo, duracion, genero, clasificacion, sinopsis, disponibilidad);
+    // PELICULAS
+    public void AgregarPelicula(String id, String titulo, String duracion, Genero genero, Clasificacion clasificacion, String sinopsis, boolean emision) {
+        Pelicula pelicula = new Pelicula(id, titulo, duracion, genero, clasificacion, sinopsis, emision);
         listaPeliculas.add(pelicula);
         System.out.println("Pelicula agregada con exito");
     }
 
+    public void EliminarPelicula(String pelicula) {
+        while (true) {
+            // Encontrar coincidencias
+            for (Pelicula pelicula2 : listaPeliculas) {
+                if (pelicula.toLowerCase().equals(pelicula2.getTitulo().toLowerCase())) {
+                    // Si -> eliminar  
+                    listaPeliculas.remove(pelicula2);
+                    System.out.println("Pelicula eliminada con exito");
+                    return;
+                }
+                // No -> Mensaje
+                System.out.println("Pelicula no encontrada. Pruebe de nuevo");
+            
+            }
+        }
+    }
+
+    public void ModificarEmisionPelicula(String pelicula) {
+        int opcion = 0;
+        while (true) {
+            // Encontrar coincidencias
+            for (Pelicula pelicula2 : listaPeliculas) {
+                if (pelicula.toLowerCase().equals(pelicula2.getTitulo().toLowerCase())) {
+                    // Si -> Modificar
+                    while (opcion != 1 && opcion != 2) {
+                        System.out.println("Emision de " + pelicula2.getTitulo() + ": "+ pelicula2.getEmision());
+                        System.out.println("¿Quieres cambiar la emision a " + !(pelicula2.isEmision()) + "?");
+                        System.out.println("1. Si\n2. No");
+                        opcion = input.nextInt();
+                    }
+                    System.out.println("Emision actualizada de " + pelicula2.getTitulo() + ": "+ pelicula2.getEmision());
+                    return;
+                }
+                // No -> Mensaje
+                System.out.println("-Pelicula no encontrada.Pruebe de nuevo-");
+            
+            }
+        }
+    }
+
+    
     public Trabajador obtenerTelefonoTrabajador(String telefonoTrabajador) {
         return listaTrabajadores.stream().filter(t -> t.getTelefono().equals(telefonoTrabajador)).findFirst().orElse(null);
     }
@@ -132,12 +173,10 @@ public class Cine {
         return listaTrabajadores.stream().filter(t -> t.getRfc().equals(rfc)).findFirst().orElse(null);
     }
 
-    //    metodo para obtener el rfc del admin
     public Administrador obtenerRfcAdmin(String rfc) {
         return listaAdmin.stream().filter(a -> a.getRfc().equals(rfc)).findFirst().orElse(null);
     }
 
-    //metodo para mostrar Trabajadores
     public void mostrarTrabajadores(){
         for(Trabajador t: listaTrabajadores){
             t.mostrarDatos();

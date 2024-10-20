@@ -2,7 +2,6 @@ package pelicula;
 
 import pelicula.utils.Clasificacion;
 import pelicula.utils.Genero;
-import pelicula.utils.Disponibilidad;
 
 public class Pelicula {
     public String id;
@@ -10,18 +9,18 @@ public class Pelicula {
     public String duracion;
     public Genero genero;
     public Clasificacion clasificacion;
-    public Disponibilidad disponibilidad;
     public String sinopsis;
+    public boolean emision; // Si -> Se estreno; No -> No se ha estrenado
 
     // Constructor
-    public Pelicula(String id, String titulo, String duracion, Genero genero, Clasificacion clasificacion, String sinopsis, Disponibilidad disponibilidad) {
+    public Pelicula(String id, String titulo, String duracion, Genero genero, Clasificacion clasificacion, String sinopsis, boolean emision) {
         this.id = id;
         this.titulo = titulo;
         this.duracion = duracion;
         this.genero = genero;
         this.clasificacion = clasificacion;
         this.sinopsis = sinopsis;
-        this.disponibilidad = disponibilidad;
+        this.emision = emision;
     }
 
     // Getters n Setters
@@ -72,5 +71,18 @@ public class Pelicula {
     public void setSinopsis(String sinopsis) {
         this.sinopsis = sinopsis;
     }
+
+    public boolean isEmision() {
+        return this.emision;
+    }
+
+    public boolean getEmision() {
+        return this.emision;
+    }
+
+    public void setEmision(boolean emision) {
+        this.emision = emision;
+    }
+
 
 }
