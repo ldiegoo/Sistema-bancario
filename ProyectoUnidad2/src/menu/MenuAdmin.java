@@ -7,7 +7,6 @@ public class MenuAdmin {
     final Scanner input = new Scanner(System.in);
     static Cine cine = new Cine();
 
-
     public int mostrarMenu() {
         int opcion = 0;
 
