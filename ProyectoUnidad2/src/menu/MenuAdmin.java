@@ -74,7 +74,7 @@ public class MenuAdmin {
                 break;
             case 2:
                 System.out.println("Seleccionaste la opcion de listar cinepolito");
-
+                cine.mostrarTrabajadores();
                 break;
             case 3:
                 System.out.println("Seleccionaste la opcion de eliminar cinepolito");
@@ -106,18 +106,20 @@ public class MenuAdmin {
                 break;
             case 5:
                 System.out.println("Seleccionaste la opcion de listar cliente");
+                cine.mostrarClientes();
                 break;
             case 6:
                 System.out.println("Seleccionaste la opcion de eliminar cliente");
                 break;
             case 7:
-                System.out.printf("Seleccionaste la opcion de agregar funciones");
+                System.out.println("Seleccionaste la opcion de agregar funciones");
+
                 break;
             case 8:
-                System.out.printf("Seleccionaste la opcion de modificar funciones");
+                System.out.println("Seleccionaste la opcion de modificar funciones");
                 break;
             case 9:
-                System.out.printf("Seleccionaste la opcion de listar funciones");
+                System.out.println("Seleccionaste la opcion de listar funciones");
                 break;
             case 10:
                 System.out.println("Seleccionaste la opcion de eliminar funciones");
