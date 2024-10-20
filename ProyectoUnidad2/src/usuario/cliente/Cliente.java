@@ -21,6 +21,17 @@ public class Cliente extends Usuario{
     public void setCURP(String CURP) {
         this.CURP = CURP;
     }
+    public String mostrarDatos(){
+        return String.format("Id: %s, nombre: %s, apellido: %s, fecha de nacimiento: %s,direccion: %s,CURP: %s, contraseña: %s",
+                getId(),
+                getNombre(),
+                getApellido(),
+                getFechaNacimiento(),
+                getDireccion(),
+                getCURP(),
+                getContraseña()
 
+        );
+    }
 
 }

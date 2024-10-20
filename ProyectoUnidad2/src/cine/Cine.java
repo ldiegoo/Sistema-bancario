@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+
+import funcion.Funcion;
 import pelicula.Pelicula;
 import pelicula.utils.Clasificacion;
 import pelicula.utils.Genero;
@@ -20,6 +22,7 @@ public class Cine {
     public ArrayList<Trabajador> listaTrabajadores = new ArrayList<>();
     public ArrayList<Asiento> listaAsientos = new ArrayList<>();
     public ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
+    public ArrayList<Funcion> listaFunciones = new ArrayList<>();
     static Scanner input = new Scanner(System.in);
 
     // Constructores
@@ -95,6 +98,21 @@ public class Cine {
                 aleatorio,
                 lista);
     }
+    public String generarIdFuncion(Pelicula pelicula, String hora, String fecha) {
+            Random rdm = new Random();
+            int aleatorio = rdm.nextInt(9999);
+            String pelicula2 = pelicula.getTitulo().substring(0, 2).toUpperCase();
+            String hora2 = hora.substring(0, 2).toUpperCase();
+            String fecha2 = fecha.substring(0, 4).toUpperCase();
+            int lista =  +1;
+            return String.format("FUNC-%s%s%s%d%d",
+                    pelicula2,
+                    hora2,
+                    fecha2,
+                    aleatorio
+                    );
+
+    }
 
     // REGISTRAR
     public void registrarTrabajador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String direccion, String rfc, Double sueldo, String telefono, String contrasenia, int antiguedad){
@@ -159,8 +177,26 @@ public class Cine {
             }
         }
     }
+    //MOSTRAR USUARIOS
+    public void mostrarTrabajadores(){
+        System.out.println("** Trabajadores **");
+        for(Trabajador t: listaTrabajadores){
+            System.out.println(t.mostrarDatos());
+        }
+    }
+    public void mostrarAdministradores(){
+        System.out.println("** Administradores **");
+        for(Administrador a: listaAdmin){
+            System.out.println(a.mostrarDatos());
+        }
+    }
+    public void mostrarClientes(){
+        System.out.println("** Clientes **");
+        for(Cliente c: listaClientes){
+            System.out.println(c.mostrarDatos());
+        }
+    }
 
-    
     public Trabajador obtenerTelefonoTrabajador(String telefonoTrabajador) {
         return listaTrabajadores.stream().filter(t -> t.getTelefono().equals(telefonoTrabajador)).findFirst().orElse(null);
     }
@@ -177,11 +213,6 @@ public class Cine {
         return listaAdmin.stream().filter(a -> a.getRfc().equals(rfc)).findFirst().orElse(null);
     }
 
-    public void mostrarTrabajadores(){
-        for(Trabajador t: listaTrabajadores){
-            t.mostrarDatos();
-        }
-    }
 
 
     // Getters n Setters
