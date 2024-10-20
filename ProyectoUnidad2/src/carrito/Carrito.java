@@ -1,46 +1,45 @@
 package carrito;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import funcion.Funcion;
 import producto.Producto;
+import cine.Cine;
 
 public class Carrito {
-    public ArrayList<Producto> listaProductos = new ArrayList<>();
-    public ArrayList<Funcion> listaFuncion = new ArrayList<>();
+    Cine cine= new Cine();
+    final Scanner input = new Scanner(System.in);
+    public ArrayList<Producto> listaProductosCarrito = new ArrayList<>();
+    public ArrayList<Funcion> listaFuncionesCarrito = new ArrayList<>();
     
     public double precioTotal;
 
-/* */
-/*public Paciente obtenerPacienteporId(String idPaciente) {
-        return listaPacientes.stream().filter(p -> p.getId().equals(idPaciente)).findFirst().orElse(null);
-    }*/
 
-//public Producto pro
+
+
+
 
 
     // Metodos
-    
-    /* 
-    
-    
 
-    public void AgregarProducto(String Id) {
-        Producto producto = obtenerproductoAgregado(Id);
-        if (producto != null) {
-            listaProductos.add(producto);
-        } else {
-            System.out.println("No se encontro el producto");
-        }
+
+
+
+    public void AgregarProducto() {
+        System.out.println("Agregar Id del producto: ");
+        String Id=input.nextLine();
+       Producto x=cine.obtenerproductoAgregado(Id);
+       cine.AgregarProducto(x.getId());
     }
 
 
     public void EliminarCarrito(Producto producto) {
-        listaProductos.remove(producto.id);
+        listaProductosCarrito.remove(producto.id);
     }
 
     public void PagarCarrito() {
-        for (Producto producto : listaProductos) {
+        for (Producto producto : listaProductosCarrito) {
             precioTotal += producto.getPrecio();
         }
         
@@ -50,7 +49,7 @@ public class Carrito {
     }
 
 
- */
+
 
 } // Fin carrito
 

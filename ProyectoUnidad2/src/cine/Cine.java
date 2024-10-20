@@ -25,10 +25,12 @@ public class Cine {
     public ArrayList<Asiento> listaAsientos = new ArrayList<>();
     public ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
     public ArrayList<Funcion> listaFunciones = new ArrayList<>();
-<<<<<<< HEAD
-=======
+
+    public ArrayList<Producto> listaProductosCarrito = new ArrayList<>();
+    public ArrayList<Funcion> listaFuncionesCarrito = new ArrayList<>();
+
     public ArrayList<Producto> listaProductos = new ArrayList<>();
->>>>>>> b9886423b12539e79cc9fb39984a2e9f46f0059c
+
     static Scanner input = new Scanner(System.in);
 
     // Constructores
@@ -39,14 +41,11 @@ public class Cine {
         this.listaTrabajadores = listaTrabajadores;
         this.listaAsientos = listaAsientos;
     }
-<<<<<<< HEAD
 
-
-=======
     public Cine () {
         
     }
->>>>>>> b9886423b12539e79cc9fb39984a2e9f46f0059c
+
 
 
 
@@ -226,11 +225,30 @@ public class Cine {
         return listaAdmin.stream().filter(a -> a.getRfc().equals(rfc)).findFirst().orElse(null);
     }
 
-<<<<<<< HEAD
 
-=======
 //Productos
->>>>>>> b9886423b12539e79cc9fb39984a2e9f46f0059c
+
+public Producto obtenerproductoAgregado(String Id) {
+    return listaProductos.stream().filter(p -> p.getId().equals(Id)).findFirst().orElse(null);
+}
+
+public void AgregarProducto(String Id) {
+        Producto producto = obtenerproductoAgregado(Id);
+        if (producto != null) {
+            listaProductosCarrito.add(producto);
+        } else {
+            System.out.println("No se encontro el producto");
+        }
+    }
+    public Usuario validarInicioSesion(String idUsuario, String contraseña) {
+        for (Usuario usuario : listaUsuarios) {
+            if (usuario.getId().equals(idUsuario) && usuario.getContraseña().equals(contraseña)) {
+                return usuario;
+            }
+        }
+        return null;
+}
+
 
     // Getters n Setters
     public ArrayList<Administrador> getListaAdmin() {

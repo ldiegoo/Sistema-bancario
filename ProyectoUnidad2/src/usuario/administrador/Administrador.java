@@ -15,8 +15,8 @@ public class Administrador extends Usuario{
 
 
     // Constructor
-    public Administrador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String telefono, String contrasenia, double sueldo, String rfc, int antiguedad) {
-        super(id, nombre, apellido, fechaNacimiento, telefono, contrasenia, Rol.ADMIN);
+    public Administrador(String id, String nombre, String apellido, LocalDate fechaNacimiento, String telefono, String contraseña, double sueldo, String rfc, int antiguedad) {
+        super(id, nombre, apellido, fechaNacimiento, telefono, contraseña, Rol.ADMIN);
         this.sueldo = sueldo;
         this.rfc = rfc;
         this.antiguedad = antiguedad;
