@@ -34,8 +34,7 @@ public class Cine {
         this.listaAsientos = listaAsientos;
     }
 
-    public Cine() {
-    }
+
 
     // Metodos
     public String generarIdAdmin(String apellido, int antiguedad, String fechaNacimiento) {
