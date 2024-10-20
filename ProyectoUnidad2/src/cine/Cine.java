@@ -1,6 +1,7 @@
 package cine;
 
 import asiento.Asiento;
+import funcion.Funcion;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
@@ -10,6 +11,7 @@ import funcion.Funcion;
 import pelicula.Pelicula;
 import pelicula.utils.Clasificacion;
 import pelicula.utils.Genero;
+import producto.Producto;
 import usuario.Usuario;
 import usuario.administrador.Administrador;
 import usuario.cliente.Cliente;
@@ -23,6 +25,10 @@ public class Cine {
     public ArrayList<Asiento> listaAsientos = new ArrayList<>();
     public ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
     public ArrayList<Funcion> listaFunciones = new ArrayList<>();
+<<<<<<< HEAD
+=======
+    public ArrayList<Producto> listaProductos = new ArrayList<>();
+>>>>>>> b9886423b12539e79cc9fb39984a2e9f46f0059c
     static Scanner input = new Scanner(System.in);
 
     // Constructores
@@ -33,6 +39,14 @@ public class Cine {
         this.listaTrabajadores = listaTrabajadores;
         this.listaAsientos = listaAsientos;
     }
+<<<<<<< HEAD
+
+
+=======
+    public Cine () {
+        
+    }
+>>>>>>> b9886423b12539e79cc9fb39984a2e9f46f0059c
 
 
 
@@ -212,7 +226,11 @@ public class Cine {
         return listaAdmin.stream().filter(a -> a.getRfc().equals(rfc)).findFirst().orElse(null);
     }
 
+<<<<<<< HEAD
 
+=======
+//Productos
+>>>>>>> b9886423b12539e79cc9fb39984a2e9f46f0059c
 
     // Getters n Setters
     public ArrayList<Administrador> getListaAdmin() {
