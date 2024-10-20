@@ -9,8 +9,9 @@ public class MenuAdmin {
 
 
     public int mostrarMenu() {
-        int opcion=0;
+        int opcion = 0;
 
+        while (opcion != 18) {
         System.out.println("BIENVENIDO QUERIDO ADMINISTRADOR");
         System.out.println("1. Registrar Cinepolito");
         System.out.println("2. Listar Cinepolito");
@@ -34,10 +35,11 @@ public class MenuAdmin {
         System.out.println("18. Cerrar Sesion");
 
         System.out.println("\nSelecciona una opcion: ");
-        opcion=input.nextInt();
+        opcion = input.nextInt();
+        }
         return opcion;
     }
-    public void ejecutarMenuAdmin(int opcion){
+    public void ejecutarMenu(int opcion){
         switch (opcion){
             case 1:System.out.println("Seleccionaste la opcion de registrar cinepolito");
                 System.out.println("Ingresa el nombre del trabajador: ");

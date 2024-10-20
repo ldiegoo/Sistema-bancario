@@ -13,14 +13,6 @@ public class Cliente extends Usuario{
         this.CURP = CURP;
     }
 
-    // Metodos
-
-
-
-
-
-
-
     // Getters n Setters
     public String getCURP() {
         return this.CURP;
