@@ -1,12 +1,12 @@
 package carrito.metodoPago;
 
-public class MetodoPago {
+public class PagoAsiento {
     private String tipo; // "credito" o "debito"
     private double monto;
     private String fecha;
     private String numeroAsiento;
 
-    public MetodoPago(String tipo, double monto, String fecha, String numeroAsiento) {
+    public PagoAsiento(String tipo, double monto, String fecha, String numeroAsiento) {
         this.tipo = tipo;
         this.monto = monto;
         this.fecha = fecha;
