@@ -1,4 +1,5 @@
 package menu;
+import carrito.Carrito;
 import cine.Cine;
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -6,8 +7,8 @@ import java.util.Scanner;
 public class MenuAdmin {
     final Scanner input = new Scanner(System.in);
     static Cine cine = new Cine();
-
-    public int mostrarMenu() {
+    static Carrito carrito = new Carrito();
+    public int mostrarMenuAdmin() {
         int opcion = 0;
 
         while (opcion != 18) {
@@ -24,13 +25,11 @@ public class MenuAdmin {
         System.out.println("10. Eliminar Funciones");
         System.out.println("11. Mirar Boletos");
         System.out.println("12. Mirar Productos");
-        System.out.println("13. Eliminar Productos");
-        System.out.println("14. Mirar carrito");
-        System.out.println("13. Revisar disponibilidad de la sala");
-        System.out.println("14. Listar salas");
-        System.out.println("15. Agregar Promociones");
-        System.out.println("16. Modificar Promociones");
-        System.out.println("17. Eliminar Promociones");
+        System.out.println("13. Agregar Productos");
+        System.out.println("14. Eliminar Productos");
+        System.out.println("15. Mirar carrito");
+        System.out.println("16. Revisar disponibilidad de la sala");
+        System.out.println("17. Listar salas");
         System.out.println("18. Cerrar Sesion");
 
         System.out.println("\nSelecciona una opcion: ");
@@ -132,6 +131,7 @@ public class MenuAdmin {
                 break;
             case 13:
                 System.out.println("Seleccionaste la opcion de eliminar productos");
+                carrito.AgregarProducto();
                 break;
             case 14:
                 System.out.println("Seleccionaste la opcion de mirar carrito");

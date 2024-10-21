@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class MenuCinepolito {
     final Scanner input = new Scanner(System.in);
     Cine cine = new Cine();
-    public void mostrarMenu(){
+    public int mostrarMenuCinepolito(){
         int opcion = 0;
         while(opcion!=14){
             System.out.println("1. Registrar Cliente");
@@ -26,6 +26,7 @@ public class MenuCinepolito {
             System.out.println("\nSelecciona una opcion: ");
             opcion = input.nextInt();
         }
+        return opcion;
     }
     public void ejecutarMenu(int opcion){
         switch (opcion){

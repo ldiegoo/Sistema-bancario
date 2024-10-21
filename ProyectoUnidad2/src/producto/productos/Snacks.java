@@ -5,8 +5,8 @@ import producto.tipoProducto.TipoProducto;
 
 public class Snacks extends Producto{
 
-    public Snacks (String nombre, double precio) {
-        super(nombre, precio, TipoProducto.SNACKS);
+    public Snacks (String Id,String nombre, double precio) {
+        super(Id,nombre, precio, TipoProducto.SNACKS);
     }
 
     public void mostrarDatos(){

@@ -6,8 +6,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
-import funcion.Funcion;
 import pelicula.Pelicula;
 import pelicula.utils.Clasificacion;
 import pelicula.utils.Genero;
@@ -25,10 +23,9 @@ public class Cine {
     public ArrayList<Asiento> listaAsientos = new ArrayList<>();
     public ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
     public ArrayList<Funcion> listaFunciones = new ArrayList<>();
-<<<<<<< HEAD
+    public ArrayList<Producto> listaProductosCarrito = new ArrayList<>();
+    public ArrayList<Funcion> listaFuncionesCarrito = new ArrayList<>();
     public ArrayList<Producto> listaProductos = new ArrayList<>();
-=======
->>>>>>> 5450a1c28942394ebd1d92e36859ab05bf69cf68
     static Scanner input = new Scanner(System.in);
 
     // Constructores
@@ -39,17 +36,10 @@ public class Cine {
         this.listaTrabajadores = listaTrabajadores;
         this.listaAsientos = listaAsientos;
     }
-<<<<<<< HEAD
+
     public Cine () {
         
     }
-=======
-
-
->>>>>>> 5450a1c28942394ebd1d92e36859ab05bf69cf68
-
-
-
     // Metodos
     public String generarIdAdmin(String apellido, int antiguedad, String fechaNacimiento) {
         LocalDate fecha = LocalDate.now();
@@ -118,13 +108,13 @@ public class Cine {
             String hora2 = hora.substring(0, 2).toUpperCase();
             String fecha2 = fecha.substring(0, 4).toUpperCase();
             int lista =  +1;
-            return String.format("FUNC-%s%s%s%d%d",
+            return String.format(
+                "FUNC-%s%s%s%d",
                     pelicula2,
                     hora2,
                     fecha2,
                     aleatorio
-                    );
-
+            );
     }
 
     // REGISTRAR
@@ -226,11 +216,29 @@ public class Cine {
         return listaAdmin.stream().filter(a -> a.getRfc().equals(rfc)).findFirst().orElse(null);
     }
 
-<<<<<<< HEAD
-//Productos
-=======
 
->>>>>>> 5450a1c28942394ebd1d92e36859ab05bf69cf68
+//Productos
+public Producto obtenerproductoAgregado(String Id) {
+    return listaProductos.stream().filter(p -> p.getId().equals(Id)).findFirst().orElse(null);
+}
+
+public void AgregarProducto(String Id) {
+        Producto producto = obtenerproductoAgregado(Id);
+        if (producto != null) {
+            listaProductosCarrito.add(producto);
+        } else {
+            System.out.println("No se encontro el producto");
+        }
+    }
+
+    public Usuario validarInicioSesion(String idUsuario, String contraseña) {
+        for (Usuario usuario : listaUsuarios) {
+            if (usuario.getId().equals(idUsuario) && usuario.getContraseña().equals(contraseña)) {
+                return usuario;
+            }
+        }
+        return null;
+}
 
     // Getters n Setters
     public ArrayList<Administrador> getListaAdmin() {

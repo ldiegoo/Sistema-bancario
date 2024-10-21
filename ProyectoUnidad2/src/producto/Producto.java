@@ -21,36 +21,39 @@ public class Producto {
 
         // Preestablecidos
         Cine cine = new Cine();
-        Producto palomitasJumbo = new Producto("001","Palomitas Jumbo", 85, TipoProducto.PALOMITAS);
+        Producto palomitasJumbo = new Producto("101","Palomitas Jumbo", 85, TipoProducto.PALOMITAS);
         cine.listaProductos.add(palomitasJumbo);
-        Producto palomitasGrandes = new Producto("002","Palomitas Grandes", 80, TipoProducto.PALOMITAS);
+        Producto palomitasGrandes = new Producto("102","Palomitas Grandes", 80, TipoProducto.PALOMITAS);
         cine.listaProductos.add(palomitasGrandes);
-        Producto palomitasMedianas = new Producto("003","Palomitas Medianas", 75, TipoProducto.PALOMITAS);
+        Producto palomitasMedianas = new Producto("103","Palomitas Medianas", 75, TipoProducto.PALOMITAS);
         cine.listaProductos.add(palomitasMedianas);
-        Producto palomitasChicas = new Producto("004","Palomitas Chicas", 70, TipoProducto.PALOMITAS);
+        Producto palomitasChicas = new Producto("104","Palomitas Chicas", 70, TipoProducto.PALOMITAS);
         cine.listaProductos.add(palomitasChicas);
-        Producto refrescoCocaCola = new Producto("005","Coca Cola", 42, TipoProducto.BEBIDA);
+        Producto refrescoCocaCola = new Producto("105","Coca Cola", 42, TipoProducto.BEBIDA);
         cine.listaProductos.add(refrescoCocaCola);
-        Producto c = new Producto("006","Squirt", 42, TipoProducto.BEBIDA);
+        Producto c = new Producto("106","Squirt", 42, TipoProducto.BEBIDA);
         cine.listaProductos.add(refrescoCocaCola);
-        Producto refrescoFanta = new Producto("007","Fanta", 42, TipoProducto.BEBIDA);
+        Producto refrescoFanta = new Producto("107","Fanta", 42, TipoProducto.BEBIDA);
         cine.listaProductos.add(refrescoFanta);
-        Producto panditas = new Producto("008","Panditas", 30, TipoProducto.SNACKS);
+        Producto panditas = new Producto("108","Panditas", 30, TipoProducto.SNACKS);
         cine.listaProductos.add(panditas);
-        Producto agua = new Producto("009","Agua Natural", 15, TipoProducto.BEBIDA);
+        Producto agua = new Producto("109","Agua Natural", 15, TipoProducto.BEBIDA);
         cine.listaProductos.add(agua);
-        Producto snickers = new Producto("010","Snickers", 35, TipoProducto.SNACKS);
+        Producto snickers = new Producto("110","Snickers", 35, TipoProducto.SNACKS);
         cine.listaProductos.add(snickers);
-        Producto milkyWays = new Producto("011","MilkyWays", 35, TipoProducto.SNACKS);
+        Producto milkyWays = new Producto("111","MilkyWays", 35, TipoProducto.SNACKS);
         cine.listaProductos.add(milkyWays);
-        Producto magnum = new Producto("012","Magnum", 50, TipoProducto.SNACKS);
+        Producto magnum = new Producto("112","Magnum", 50, TipoProducto.SNACKS);
         cine.listaProductos.add(magnum);
-        Producto corneto = new Producto("013","Corneto", 40, TipoProducto.SNACKS);
+        Producto corneto = new Producto("113","Corneto", 40, TipoProducto.SNACKS);
         cine.listaProductos.add(corneto);
     }
 
 
     // Getters n Setters
+    public String getId() {
+        return this.id;
+    }
     public String getNombre() {
         return this.nombre;
     }

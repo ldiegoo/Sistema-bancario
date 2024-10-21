@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class MenuCliente {
     final Scanner input = new Scanner(System.in);
 
-    public int mostrarMenu(){
+    public int mostrarMenuCliente(){
         int opcion=0;
         while(opcion!=5){
             System.out.println("1. Mirar Funciones");
