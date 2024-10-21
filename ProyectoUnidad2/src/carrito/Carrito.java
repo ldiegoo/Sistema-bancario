@@ -33,9 +33,10 @@ public class Carrito {
         }
     }
 
-    public void EliminarCarrito(Producto producto) {
+    public void EliminarCarrito() {
         for (Producto p : listaProductosCarrito) {
             listaProductosCarrito.remove(p);
+            System.out.println("Carrito eliminado con exito");
         }
     }
 
@@ -57,10 +58,11 @@ public class Carrito {
             case 1 -> System.out.print("Credito");
             case 2 -> System.out.println("Debito");
         }
+        for (Producto p : listaProductosCarrito) {
+            listaProductosCarrito.remove(p);
+            System.out.println("Carrito eliminado con exito");
+        }
     }
-
-
-
 
 } // Fin carrito
 
