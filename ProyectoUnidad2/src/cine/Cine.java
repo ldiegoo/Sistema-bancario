@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+
+import funcion.Funcion;
 import pelicula.Pelicula;
 import pelicula.utils.Clasificacion;
 import pelicula.utils.Genero;
@@ -23,7 +25,10 @@ public class Cine {
     public ArrayList<Asiento> listaAsientos = new ArrayList<>();
     public ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
     public ArrayList<Funcion> listaFunciones = new ArrayList<>();
+<<<<<<< HEAD
     public ArrayList<Producto> listaProductos = new ArrayList<>();
+=======
+>>>>>>> 5450a1c28942394ebd1d92e36859ab05bf69cf68
     static Scanner input = new Scanner(System.in);
 
     // Constructores
@@ -34,9 +39,14 @@ public class Cine {
         this.listaTrabajadores = listaTrabajadores;
         this.listaAsientos = listaAsientos;
     }
+<<<<<<< HEAD
     public Cine () {
         
     }
+=======
+
+
+>>>>>>> 5450a1c28942394ebd1d92e36859ab05bf69cf68
 
 
 
@@ -216,7 +226,11 @@ public class Cine {
         return listaAdmin.stream().filter(a -> a.getRfc().equals(rfc)).findFirst().orElse(null);
     }
 
+<<<<<<< HEAD
 //Productos
+=======
+
+>>>>>>> 5450a1c28942394ebd1d92e36859ab05bf69cf68
 
     // Getters n Setters
     public ArrayList<Administrador> getListaAdmin() {
