@@ -16,7 +16,7 @@ public class MenuCinepolito {
             System.out.println("3. Modificar Funciones");
             System.out.println("4. Listar Funciones");
             System.out.println("5. Eliminar Funciones");
-            System.out.println("6. Mirar Boletos");
+            System.out.println("6. Mirar Boletos"); //eliminar
             System.out.println("7. Mirar Productos");
             System.out.println("8. Eliminar Productos");
             System.out.println("9. Mirar carrito");

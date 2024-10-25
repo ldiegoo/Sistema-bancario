@@ -23,7 +23,7 @@ import java.util.Scanner;
                     "4452234568",
                     "12354",
                     10000,
-                    "refad678",
+                    "refad678<",
                     2);
             int intentosMaximos = 5, intentosUsuario = 0;
             Boolean bandera = true;
