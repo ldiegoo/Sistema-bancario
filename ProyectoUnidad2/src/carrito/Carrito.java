@@ -1,11 +1,10 @@
 package carrito;
 
+import cine.Cine;
+import funcion.Funcion;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import funcion.Funcion;
 import producto.Producto;
-import cine.Cine;
 
 public class Carrito {
     Cine cine= new Cine();
@@ -15,27 +14,30 @@ public class Carrito {
     
     public double precioTotal;
 
-
-
-
-
-
-
     // Metodos
-
-
-
-
     public void AgregarProducto() {
-        System.out.println("Agregar Id del producto: ");
+        System.out.println("Ingresar Id del producto: ");
         String Id=input.nextLine();
-       Producto x=cine.obtenerproductoAgregado(Id);
-       cine.AgregarProducto(x.getId());
+        Producto x=cine.obtenerproductoAgregado(Id);
+        cine.AgregarProducto(x.getId());
     }
 
+    public void EliminarProducto() {
+        System.out.print("Ingresar Id del producto: ");
+        String Id = input.nextLine();
+        for (Producto p : listaProductosCarrito) {
+            if (p.getId().equals(Id)) {
+                listaProductosCarrito.remove(p);
+                System.out.println("Producto eliminado con exito");
+            }
+        }
+    }
 
-    public void EliminarCarrito(Producto producto) {
-        listaProductosCarrito.remove(producto.id);
+    public void EliminarCarrito() {
+        for (Producto p : listaProductosCarrito) {
+            listaProductosCarrito.remove(p);
+            System.out.println("Carrito eliminado con exito");
+        }
     }
 
     public void PagarCarrito() {
@@ -43,13 +45,24 @@ public class Carrito {
             precioTotal += producto.getPrecio();
         }
         
-        System.out.println("Total: " + precioTotal);
-        System.out.println("Seleccionar metodo de pago");
+        int opcion = 0;
+        while (opcion != 1 && opcion != 2) {
+            System.out.println("Total: " + precioTotal);
+            System.out.println("Seleccionar metodo de pago");
+            System.out.println("1. Credito\n2. Debito");
+            opcion = input.nextInt();
+        }
         System.out.println("Carrito pagado con exito");
+        System.out.println("Metodo de pago: ");
+        switch (opcion) {
+            case 1 -> System.out.print("Credito");
+            case 2 -> System.out.println("Debito");
+        }
+        for (Producto p : listaProductosCarrito) {
+            listaProductosCarrito.remove(p);
+            System.out.println("Carrito eliminado con exito");
+        }
     }
 
-
-
-
-} // Fin carrito
+} 
 

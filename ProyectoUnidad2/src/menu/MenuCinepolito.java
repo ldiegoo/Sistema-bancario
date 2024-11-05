@@ -1,28 +1,25 @@
 package menu;
 
+import carrito.Carrito;
 import cine.Cine;
-
+import funcion.Funcion;
 import java.time.LocalDate;
 import java.util.Scanner;
-
+import producto.Producto;
 public class MenuCinepolito {
     final Scanner input = new Scanner(System.in);
     Cine cine = new Cine();
+    Carrito carrito= new Carrito();
     public int mostrarMenuCinepolito(){
         int opcion = 0;
-        while(opcion!=14){
+        while(opcion!=8){
             System.out.println("1. Registrar Cliente");
-            System.out.println("2. Agregar Funciones");
-            System.out.println("3. Modificar Funciones");
-            System.out.println("4. Listar Funciones");
-            System.out.println("5. Eliminar Funciones");
-            System.out.println("6. Mirar Boletos"); //eliminar
-            System.out.println("7. Mirar Productos");
-            System.out.println("8. Eliminar Productos");
-            System.out.println("9. Mirar carrito");
-            System.out.println("10. Revisar disponibilidad de la sala");
-            System.out.println("11. Listar salas");
-            System.out.println("12. Cerrar Sesion");
+            System.out.println("2. Agregar Funciones");   
+            System.out.println("3. Listar Funciones");
+            System.out.println("4. Eliminar Funciones");
+            System.out.println("5. Mirar Productos");
+            System.out.println("6. Agregar Productos");
+            System.out.println("7. Cerrar Sesion");
             System.out.println("\nSelecciona una opcion: ");
             opcion = input.nextInt();
         }
@@ -55,38 +52,41 @@ public class MenuCinepolito {
                 cine.registrarCliente(idCliente, nombreCliente, apellidoCliente,fechaNacimientoCliente, direccionCliente, CURP,contrasenia );
         break;
         case 2:
-            System.out.printf("Seleccionaste la opcion de agregar funciones");
+        System.out.println("Seleccionaste la opcion de agregar funciones");
         break;
         case 3:
-            System.out.printf("Seleccionaste la opcion de modificar funciones");
-        break;
-        case 4:
             System.out.printf("Seleccionaste la opcion de listar funciones");
+            
+            System.out.println("Seleccionaste la opcion de listar funciones");
+                for (Funcion f : cine.listaFunciones) {
+                    System.out.println(f.getPelicula() + " -> " + f.getHorario());
+                }
+                break;
+        case 4:
+            System.out.println("Seleccionaste la opcion de eliminar funciones");
+            System.out.print("Ingresar id Funcion: ");
+                String id = input.next();
+                for (Funcion f : cine.listaFunciones) {
+                    if (id.equals(f.getId())) {
+                        cine.listaAdmin.remove(f);
+                        System.out.println("Funcion eliminada con exito");
+                        return;
+                    }
+                }
         break;
         case 5:
-            System.out.printf("Seleccionaste la opcion de eliminar funciones");
+            System.out.printf("Seleccionaste la opcion de mirar productos");
+            for (Producto p : cine.listaProductos) {
+                    System.out.println(p.getNombre() + " \t--- "+p.getPrecio());
+                }
         break;
         case 6:
-            System.out.printf("Seleccionaste la opcion de mirar boletos");
+            System.out.println("Seleccionaste la opcion de agregar productos");
+            carrito.AgregarProducto();
         break;
         case 7:
-            System.out.printf("Seleccionaste la opcion de mirar productos");
-        break;
-        case 8:
-            System.out.printf("Seleccionaste la opcion de eliminar productos");
-        break;
-        case 9:
-            System.out.printf("Seleccionaste la opcion de mirar carrito");
-        break;
-        case 10:
-            System.out.printf("Seleccionaste la opcion de revisar disponibilidad de la sala");
-        break;
-        case 11:
-            System.out.printf("Seleccionaste la opcion de listar salas");
-        break;
-        case 12:
-            System.out.println("Seleccionaste la opcion de cerrar sesion");
             System.out.println("Hasta luego, te esperamos pronto para una nueva experiencia llena de emociones con Cinepolis");
+
         break;
         }
     }

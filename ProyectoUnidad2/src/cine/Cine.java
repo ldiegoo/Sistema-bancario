@@ -6,8 +6,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
-import funcion.Funcion;
 import pelicula.Pelicula;
 import pelicula.utils.Clasificacion;
 import pelicula.utils.Genero;
@@ -16,6 +14,7 @@ import usuario.Usuario;
 import usuario.administrador.Administrador;
 import usuario.cliente.Cliente;
 import usuario.trabajador.Trabajador;
+import sala.Sala;
 
 public class Cine {
     public ArrayList<Administrador> listaAdmin = new ArrayList<>();
@@ -25,10 +24,8 @@ public class Cine {
     public ArrayList<Asiento> listaAsientos = new ArrayList<>();
     public ArrayList<Pelicula> listaPeliculas = new ArrayList<>();
     public ArrayList<Funcion> listaFunciones = new ArrayList<>();
-
     public ArrayList<Producto> listaProductosCarrito = new ArrayList<>();
     public ArrayList<Funcion> listaFuncionesCarrito = new ArrayList<>();
-
     public ArrayList<Producto> listaProductos = new ArrayList<>();
 
     static Scanner input = new Scanner(System.in);
@@ -45,10 +42,6 @@ public class Cine {
     public Cine () {
         
     }
-
-
-
-
     // Metodos
     public String generarIdAdmin(String apellido, int antiguedad, String fechaNacimiento) {
         LocalDate fecha = LocalDate.now();
@@ -110,20 +103,20 @@ public class Cine {
                 aleatorio,
                 lista);
     }
-    public String generarIdFuncion(Pelicula pelicula, String hora, String fecha) {
+    public String generarIdFuncion(Pelicula pelicula, String horario) {
             Random rdm = new Random();
             int aleatorio = rdm.nextInt(9999);
             String pelicula2 = pelicula.getTitulo().substring(0, 2).toUpperCase();
-            String hora2 = hora.substring(0, 2).toUpperCase();
-            String fecha2 = fecha.substring(0, 4).toUpperCase();
-            int lista =  +1;
-            return String.format("FUNC-%s%s%s%d%d",
-                    pelicula2,
-                    hora2,
-                    fecha2,
-                    aleatorio
-                    );
+            String hora = horario.substring(0, 2).toUpperCase();
+            int lista =  listaFunciones.size()+1;
 
+            return String.format(
+                "FUNC-%s%s%d%d",
+                    pelicula2,
+                    hora,
+                    aleatorio,
+                    lista
+            );
     }
 
     // REGISTRAR
@@ -142,6 +135,11 @@ public class Cine {
         listaClientes.add(cliente);
         System.out.println("Cliente registrado con exito");
     }
+    //public void registrarFuncion(String id, Pelicula  pelicula, String horario, Sala sala, inty asientos){
+        //Funcion funcion = new Funcion(id, pelicula, horario, sala, asientos);
+        //listaFunciones.add(funcion);
+        //System.out.println("Funcion registrada con exito");
+   // }
 
     // PELICULAS
     public void AgregarPelicula(String id, String titulo, String duracion, Genero genero, Clasificacion clasificacion, String sinopsis, boolean emision) {
@@ -162,7 +160,6 @@ public class Cine {
                 }
                 // No -> Mensaje
                 System.out.println("Pelicula no encontrada. Pruebe de nuevo");
-            
             }
         }
     }
@@ -185,29 +182,40 @@ public class Cine {
                 }
                 // No -> Mensaje
                 System.out.println("-Pelicula no encontrada.Pruebe de nuevo-");
-            
             }
         }
     }
     //MOSTRAR USUARIOS
-    public void mostrarTrabajadores(){
-        System.out.println("** Trabajadores **");
-        for(Trabajador t: listaTrabajadores){
-            System.out.println(t.mostrarDatos());
-        }
+    //public void mostrarTrabajadores(){
+        //System.out.println("** Trabajadores **");
+        //for(Trabajador t: listaTrabajadores){
+        //    t.mostrarDatos();
+      //  }
+    //}
+    public void mostrarTrabajadores() {
+    System.out.println("** Trabajadores **");
+    if (listaTrabajadores.isEmpty()) {
+        System.out.println("No hay trabajadores registrados.");
+        return;
     }
+    for (Trabajador t : listaTrabajadores) {
+        t.mostrarDatos();
+    }
+}
     public void mostrarAdministradores(){
         System.out.println("** Administradores **");
         for(Administrador a: listaAdmin){
-            System.out.println(a.mostrarDatos());
+            a.mostrarDatos();
         }
     }
     public void mostrarClientes(){
         System.out.println("** Clientes **");
         for(Cliente c: listaClientes){
-            System.out.println(c.mostrarDatos());
+            c.mostrarDatos();
         }
     }
+    // Funcion
+    
 
     public Trabajador obtenerTelefonoTrabajador(String telefonoTrabajador) {
         return listaTrabajadores.stream().filter(t -> t.getTelefono().equals(telefonoTrabajador)).findFirst().orElse(null);
@@ -227,10 +235,15 @@ public class Cine {
 
 
 //Productos
-
 public Producto obtenerproductoAgregado(String Id) {
     return listaProductos.stream().filter(p -> p.getId().equals(Id)).findFirst().orElse(null);
 }
+
+public Pelicula obtenerPeliculaId(String id) {
+    return listaPeliculas.stream().filter(p -> p.getId().equals(id)).findFirst().orElse(null);
+
+}
+
 
 public void AgregarProducto(String Id) {
         Producto producto = obtenerproductoAgregado(Id);
@@ -240,6 +253,7 @@ public void AgregarProducto(String Id) {
             System.out.println("No se encontro el producto");
         }
     }
+
     public Usuario validarInicioSesion(String idUsuario, String contraseña) {
         for (Usuario usuario : listaUsuarios) {
             if (usuario.getId().equals(idUsuario) && usuario.getContraseña().equals(contraseña)) {
@@ -248,7 +262,6 @@ public void AgregarProducto(String Id) {
         }
         return null;
 }
-
 
     // Getters n Setters
     public ArrayList<Administrador> getListaAdmin() {
@@ -290,5 +303,7 @@ public void AgregarProducto(String Id) {
     public void setListaAsientos(ArrayList<Asiento> listaAsientos) {
         this.listaAsientos = listaAsientos;
     }
+
+
 
 }
