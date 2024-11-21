@@ -2,15 +2,18 @@ package banco;
 
 import usuario.cliente.Cliente;
 import usuario.empleado.Empleado;
+import usuario.empleado.GerenteSucursal;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Banco {
+public ArrayList<GerenteSucursal> listaGerente = new ArrayList<>();
 
-
-
+    public Banco(ArrayList<GerenteSucursal> listaGerente) {
+        this.listaGerente = listaGerente;
+    }
 
     public static String generarNumeroTarjeta() {
         Random random = new Random();

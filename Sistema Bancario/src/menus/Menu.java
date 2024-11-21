@@ -1,13 +1,30 @@
 package menus;
 
+import banco.Banco;
 import usuario.cliente.Cliente;
 import usuario.empleado.Empleado;
+import usuario.empleado.GerenteSucursal;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Menu {
     Scanner input = new Scanner(System.in);
+    GerenteSucursal gerente= new GerenteSucursal (
+            "001",
+            "Admin",
+            "Supremo",
+            "4452234568",
+            "12354",
+            "Santiaguito",
+            "12354",
+            "x",
+            20000);
 
+    //Banco.listaGerente.add(gerente);
+
+    int intentos =5;
+    Boolean bandera = true;
 
    /* public void login(){
         Administrador admin = new Administrador (
