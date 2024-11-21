@@ -4,13 +4,15 @@ import usuario.Usuario;
 
 public class Cliente extends Usuario{
     // Variables
+    public String IdCliente;
     private String FechaRegistro;
     private String DireccionRegistro;
     private String SucursalRegistro; 
 
     // Constructor
-    public Cliente(String id, String nombre, String apellidos, String RFC, String CURP, String direccion, String contrasenia, String FechaRegistro, String DireccionRegistro, String SucursalRegistro) {
-        super(id, nombre, apellidos, RFC, CURP, direccion, contrasenia);
+    public Cliente(String IdCliente, String nombre, String apellidos, String RFC, String CURP, String direccion, String contrasenia, String FechaRegistro, String DireccionRegistro, String SucursalRegistro) {
+        super( nombre, apellidos, RFC, CURP, direccion, contrasenia);
+        this.IdCliente = IdCliente;
         this.FechaRegistro = FechaRegistro;
         this.DireccionRegistro = DireccionRegistro;
         this.SucursalRegistro = SucursalRegistro;
@@ -19,6 +21,15 @@ public class Cliente extends Usuario{
 
 
     // GETTERS & SETTERS
+
+    public String getIdCliente() {
+        return IdCliente;
+    }
+
+    public void setIdCliente(String idCliente) {
+        IdCliente = idCliente;
+    }
+
     public String getFechaRegistro() {
         return this.FechaRegistro;
     }
