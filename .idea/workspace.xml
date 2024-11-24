@@ -1,39 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3586bf7b-50f2-445d-a1c9-9f9b51d2bed8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ProyectoUnidad2/UML.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/asiento/utils/EstadoAsiento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/asiento/utils/TipoAsiento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/carrito/metodoPago/Pago.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/carrito/metodoPago/PagoAsiento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/utils/EstadoAsiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/ProyectoUnidad2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/ProyectoUnidad2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/asiento/Asiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/asiento/Asiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/boleto/Boleto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/boleto/Boleto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/carrito/Carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/carrito/Carrito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/cine/Cine.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/cine/Cine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/funcion/Funcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/funcion/Funcion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/menu/MenuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/menu/MenuAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/menu/MenuCinepolito.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/menu/MenuCinepolito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/menu/MenuCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/menu/MenuCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/pago/Pago.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/pelicula/Pelicula.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/pelicula/Pelicula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/pelicula/utils/Clasificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/pelicula/utils/Clasificacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/pelicula/utils/Genero.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/pelicula/utils/Genero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/producto/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/producto/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/reservacion/Reservacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/reservacion/Reservacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/sala/Sala.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/sala/Sala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/usuario/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/usuario/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/usuario/administrador/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/usuario/administrador/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoUnidad2/src/usuario/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoUnidad2/src/usuario/cliente/Cliente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sistema Bancario/src/usuario/empleado/GerenteSucursal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proyectos.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema Bancario/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema Bancario/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema Bancario/src/banco/Banco.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema Bancario/src/banco/Banco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema Bancario/src/menus/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema Bancario/src/menus/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema Bancario/src/usuario/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema Bancario/src/usuario/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema Bancario/src/usuario/cliente/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema Bancario/src/usuario/cliente/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sistema Bancario/src/usuario/empleado/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/Sistema Bancario/src/usuario/empleado/Empleado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,9 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2oPUiBZW1aa04NgN4OTMLwwgfYW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -57,15 +36,34 @@
     "git-widget-placeholder": "Merging develop",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/guzdi/TEC/Proyectos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Proyectos" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Proyectos" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
       </set>
     </attachedChunks>
   </component>
@@ -78,6 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1730770828374</updated>
       <workItem from="1730770829394" duration="30000" />
+      <workItem from="1732198559061" duration="633000" />
     </task>
     <servers />
   </component>

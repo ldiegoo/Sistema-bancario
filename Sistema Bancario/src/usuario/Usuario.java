@@ -2,7 +2,7 @@ package usuario;
 
 public abstract class Usuario {
     // Variables
-    public String id;
+
     public String nombre;
     public String apellidos;
     public String RFC;
@@ -11,8 +11,7 @@ public abstract class Usuario {
     protected String contrasenia;
 
     //CONSTRUCTOR
-    public Usuario(String id, String nombre, String apellidos, String RFC, String CURP, String direccion, String contrasenia) {
-        this.id = id;
+    public Usuario( String nombre, String apellidos, String RFC, String CURP, String direccion, String contrasenia) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.RFC = RFC;
@@ -22,13 +21,7 @@ public abstract class Usuario {
     }
 
     // GETTERS Y SETTERS
-    public String getId() {
-        return this.id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNombre() {
         return this.nombre;
