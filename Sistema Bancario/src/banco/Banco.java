@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Banco {
-public ArrayList<GerenteSucursal> listaGerente = new ArrayList<>();
+public ArrayList<GerenteSucursal> listaGerente = new ArrayList<>();// eliminar y cambiar por el archivo
 
     public Banco(ArrayList<GerenteSucursal> listaGerente) {
         this.listaGerente = listaGerente;
@@ -24,14 +24,14 @@ public ArrayList<GerenteSucursal> listaGerente = new ArrayList<>();
             numeroTarjeta.append(random.nextInt(10)); // Genera un dígito aleatorio del 0 al 9
         }
         // Formatea el número en bloques de 4
-        /*StringBuilder numeroFormateado = new StringBuilder();
+        StringBuilder numeroFormateado = new StringBuilder();
         for (int i = 0; i < numeroTarjeta.length(); i++) {
             if (i > 0 && i % 4 == 0) {
                 numeroFormateado.append(" "); // Añade un espacio cada 4 dígitos
             }
             numeroFormateado.append(numeroTarjeta.charAt(i));
-        }*/
-        return numeroTarjeta.toString();
+        }
+        return numeroFormateado.toString();
     }
     public String generarIdCliente(String apellido, String CURP,String SucursalRegistro) {
         LocalDate fecha = LocalDate.now();
@@ -76,4 +76,20 @@ public ArrayList<GerenteSucursal> listaGerente = new ArrayList<>();
                 yearActual,
                 aleatorio);
     }
+    public String generarCVV() {
+        Random rdm= new Random();
+        StringBuilder cvv = new StringBuilder();
+        //generar el cvv
+        for (int i = 0; i < 3; i++) {
+            cvv.append(rdm.nextInt(10));
+        }
+        //convierte la StringBuilder a String
+        return cvv.toString();
+    }
+    public LocalDate generarFechaVencimiento() {
+        LocalDate fechaActual = LocalDate.now();
+        LocalDate fechaVencimiento = fechaActual.plusYears(5);
+        return fechaVencimiento;
+    }
+
 }
