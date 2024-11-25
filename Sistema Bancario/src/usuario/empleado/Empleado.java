@@ -2,7 +2,7 @@ package usuario.empleado;
 
 import usuario.Usuario;
 
-public class Empleado extends Usuario{
+public class Empleado extends Usuario {
     // Variables
     public String IdEmpleado;
     public String sucursal;
@@ -43,6 +43,8 @@ public class Empleado extends Usuario{
 
     public void setSalario(double salario) {
         this.salario = salario;
+        System.out.println("");
+        System.out.println();
     }
 
     public RolTrabajo getRol() {

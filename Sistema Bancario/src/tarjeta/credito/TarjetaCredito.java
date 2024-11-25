@@ -19,9 +19,9 @@ public class TarjetaCredito extends Tarjeta{
         return this.credito;
     }
 
-    public void setCredito(double credito) {
+    /*public void setCredito(double credito) {
         this.credito = credito;
-    }
+    }*/
 
     public double getLimiteCredito() {
         return this.limiteCredito;

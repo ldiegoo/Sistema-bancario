@@ -1,5 +1,9 @@
 package menus;
 
+<<<<<<< HEAD
+public class Menu {
+    
+=======
 import banco.Banco;
 import usuario.cliente.Cliente;
 import usuario.empleado.Empleado;
@@ -78,4 +82,5 @@ public class Menu {
         System.out.print("Límite de intentos");
     }
 }*/
+>>>>>>> 9eb70a162ca65c951eaffcb7e220acf34d1f2d7b
 }

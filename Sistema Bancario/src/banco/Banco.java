@@ -3,13 +3,16 @@ package banco;
 import usuario.cliente.Cliente;
 import usuario.empleado.Empleado;
 import usuario.empleado.GerenteSucursal;
+import usuario.Usuario;
+import usuario.cliente.Cliente;
+import usuario.empleado.Empleado;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Banco {
-public ArrayList<GerenteSucursal> listaGerente = new ArrayList<>();// eliminar y cambiar por el archivo
+public ArrayList<GerenteSucursal> listaGerente = new ArrayList<>();
 
     public Banco(ArrayList<GerenteSucursal> listaGerente) {
         this.listaGerente = listaGerente;

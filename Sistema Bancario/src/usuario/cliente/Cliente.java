@@ -34,25 +34,25 @@ public class Cliente extends Usuario{
         return this.FechaRegistro;
     }
 
-    public void setFechaRegistro(String FechaRegistro) {
+    /*public void setFechaRegistro(String FechaRegistro) {
         this.FechaRegistro = FechaRegistro;
-    }
+    }*/
 
     public String getDireccionRegistro() {
         return this.DireccionRegistro;
     }
 
-    public void setDireccionRegistro(String DireccionRegistro) {
+    /*public void setDireccionRegistro(String DireccionRegistro) {
         this.DireccionRegistro = DireccionRegistro;
-    }
+    }*/
 
     public String getSucursalRegistro() {
         return this.SucursalRegistro;
     }
 
-    public void setSucursalRegistro(String SucursalRegistro) {
+    /*public void setSucursalRegistro(String SucursalRegistro) {
         this.SucursalRegistro = SucursalRegistro;
-    }
+    }*/
 
 
     
