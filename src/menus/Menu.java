@@ -22,7 +22,7 @@ public class Menu {
             System.out.println("--------------------");
             System.out.println("\uD83C\uDFE6 Bienvenido.");
             System.out.println("1. Cliente \uD83D\uDC64\n2. Empleado \uD83D\uDC77\n3.Salir \uD83D\uDEAA");
-            System.out.print("Ingrese la opcion de su rol: ");
+            System.out.print("Ingresar como: ");
             try {
                 opcion = input.nextInt();
                 if (opcion < 1 || opcion > 3) {
@@ -123,58 +123,7 @@ public class Menu {
 
     }
 
-   /* public void login(){
-        Administrador admin = new Administrador (
-                "001",
-                "Admin",
-                "Supremo",
-                LocalDate.of(2004,9,17),
-                "4452234568",
-                "12354",
-                10000,
-                "refad678",
-                2);
-        cine.listaAdmin.add(admin);
-        int intentos =5;
-        Boolean bandera = true;
 
-
-        while (intentos != 0 ) {
-            System.out.println("Ingrese id: ");
-            String id = sc.next();
-            System.out.println("Ingrese contraseña: ");
-            String contrasenia = sc.next();
-
-            // Verificar Admins
-            /*for (Administrador a : banco.listaAdmin) {
-                if (a.getId().equals(id) && a.getContraseña().equals(contrasenia)) {
-                    System.out.println("Bienvenido, administrador " + a.getNombre() + " " + a.getApellido());
-                    MenuAdmin menuAdmin = new MenuAdmin();
-                    menuAdmin.ejecutarMenu();
-                }
-            }*/
-    /*
-            // Verificar Trabajadores
-            for (Empleado a : banco.listaTrabajadores) {
-                if (a.getId().equals(id) && a.getContraseña().equals(contrasenia)) {
-                    System.out.println("Bienvenido, trabajador " + a.getNombre() + " " + a.getApellido());
-                    return;
-                }
-            }
-            // Verificar Clientes
-            for (Cliente a : c.listaClientes) {
-                if (a.getId().equals(id) && a.getContraseña().equals(contrasenia)) {
-                    System.out.println("Bienvenido, cliente " + a.getNombre() + " " + a.getApellido());
-                    return;
-                }
-            }
-            System.out.println("Id o contrasenia incorrecta");
-            intentos--;
-            System.out.println("Intentos: " + (intentos));
-        }
-        System.out.print("Límite de intentos");
-    }
-}*/
    private boolean validarTelefonoRepetido(ArrayList<? extends Usuario> listaUsuarios, String telefono) {
        for (Usuario usuario : listaUsuarios) {
            if (usuario.getTelefono().equals(telefono)) {

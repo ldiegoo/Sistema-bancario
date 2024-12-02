@@ -172,26 +172,12 @@ public class Banco {
                 aleatorio);
     }
 
-    /*public Empleado buscarEjecutivoPorRFC(String rfcEmpleado) {
-        for (Empleado empleado : listaEjecutivos) {
-            if (empleado.getRFC().equals(rfcEmpleado)) {
-                return empleado;
-            }
-        }
-        return null;
-    }*/
-
     public void verInformacionCliente(Cliente cliente) {
         System.out.println("Datos del cliente:");
         cliente.mostrarDatos();
     }
 
-    /*public void mostrarEmpleados() {
-        System.out.println("\n** Empleados **");
-        for (Medico medicos : this.listaMedicos) {
-            System.out.println(medicos.mostrarDatos());
-        }
-    }*/
+
 
 
 }

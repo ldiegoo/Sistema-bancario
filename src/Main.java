@@ -41,14 +41,7 @@ public class Main {
                 e.printStackTrace();
             }
         }
-
-        /*
-        Cliente cliente = new Cliente("004", "Ana", "Martínez", "ANMA123456", "CURP345678", "Calle de la Amargura 789", "555-4321", "password321","2024-04-01", "Dirección 4", "Sucursal 4");
-        banco.registrarCliente(cliente);
-
-        Empleado empleado = new Empleado("002", "Laura", "García", "LAGA123456", "CURP234567", "Avenida Central 456", "555-6789", "password456", "Sucursal Norte", 60000.0, RolTrabajo.GERENTE);
-        banco.registrarEmpleado(empleado);
-        */
+        
 
         while (true) {
 
@@ -56,6 +49,7 @@ public class Main {
                 case 1:
                     MenuClientes.menu(Menu.loginCliente());
                     break;
+                case 2:
 
                 case 3:
                     System.out.println("\n\uD83D\uDC4B Hasta luego!");
