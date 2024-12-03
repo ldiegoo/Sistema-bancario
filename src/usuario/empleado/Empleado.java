@@ -3,17 +3,19 @@ package usuario.empleado;
 import usuario.Usuario;
 import utils.RolTrabajo;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class Empleado extends Usuario implements Serializable {
     // Variables
-    public String sucursal;
+    @Serial
+    private static final long serialVersionUID = 3255469587165131566L;
+    public int sucursal;
     private double salario;
     private final RolTrabajo rol;
 
     // Constructor
-
-    public Empleado(String Id, String nombre, String apellidos, String RFC, String CURP, String direccion, String telefono, String contrasenia, String sucursal, double salario, RolTrabajo rol) {
+    public Empleado(String Id, String nombre, String apellidos, String RFC, String CURP, String direccion, String telefono, String contrasenia, int sucursal, double salario, RolTrabajo rol) {
         super(Id, nombre, apellidos, RFC, CURP, direccion, telefono, contrasenia);
         this.sucursal = sucursal;
         this.salario = salario;
@@ -23,11 +25,11 @@ public class Empleado extends Usuario implements Serializable {
 
     // GETTERS & SETTERS
 
-    public String getSucursal() {
+    public int getSucursal() {
         return this.sucursal;
     }
 
-    public void setSucursal(String sucursal) {
+    public void setSucursal(int sucursal) {
         this.sucursal = sucursal;
     }
 
@@ -41,6 +43,8 @@ public class Empleado extends Usuario implements Serializable {
         System.out.println();
     }
 
+    public RolTrabajo getRol() {return this.rol;}
+
     /*public RolTrabajo getRol() {
         return this.rol;
     }
@@ -48,5 +52,17 @@ public class Empleado extends Usuario implements Serializable {
     public void setRol(RolTrabajo rol) {
         this.rol = rol;
     }*/
-
+/*
+String Id,
+String nombre,
+String apellidos,
+String RFC,
+String CURP,
+String direccion,
+String telefono,
+String contrasenia,
+int sucursal,
+double salario,
+RolTrabajo rol
+ */
 }

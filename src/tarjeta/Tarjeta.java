@@ -1,8 +1,9 @@
 package tarjeta;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class Tarjeta {
+public abstract class Tarjeta implements Serializable {
     // Variables
     public String titular;
     public String numTarjeta;
@@ -27,6 +28,7 @@ public abstract class Tarjeta {
 
     public abstract String mostrarDineroDisponible();
     public abstract String ingresarDinero(double dineroAIngresar);
+
 
     public String getNumTarjeta() {
         return this.numTarjeta;
@@ -77,5 +79,7 @@ public abstract class Tarjeta {
         this.CVV = CVV;
     }*/
 
-
+    public String getTitular() {
+        return titular;
+    }
 }

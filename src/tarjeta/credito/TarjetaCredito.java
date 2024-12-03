@@ -1,18 +1,32 @@
 package tarjeta.credito;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import tarjeta.Tarjeta;
 
-public class TarjetaCredito extends Tarjeta{
+public class TarjetaCredito extends Tarjeta implements Serializable {
     public double credito;
     public final double limiteCredito = 100000;
+    private boolean asignada;
 
 
     //Constructor
-    public TarjetaCredito(String titular, String numTarjeta, LocalDate fechaCreacion, String CVV, String CLABE, LocalDate fechaVencimiento, LocalDate fechaUltimoMovimiento, double credito) {
+    public TarjetaCredito(String titular, String numTarjeta, LocalDate fechaCreacion, String CVV, String CLABE, LocalDate fechaVencimiento, LocalDate fechaUltimoMovimiento, double credito, boolean asignada) {
         super(titular, numTarjeta, fechaCreacion, CVV, CLABE, fechaVencimiento, fechaUltimoMovimiento);
         this.credito = credito;
+        this.asignada = false;
     }
+
+    /*public void solicitarTarjetaCredito(TarjetaDebito tarjeta) {
+        if (tarjeta => 30000) {
+            bamco.regustrarTarjetaCredito();
+        } else {
+
+        }
+    }
+
+     */
+
 
 
     @Override
@@ -78,5 +92,12 @@ public class TarjetaCredito extends Tarjeta{
         return this.limiteCredito;
     }
 
+    public boolean isAsignada() {
+        return asignada;
+    }
+
+    public void asignar() {
+        this.asignada = true;
+    }
     
 }

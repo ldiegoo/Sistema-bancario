@@ -1,11 +1,9 @@
 package menus;
 
 import banco.Banco;
-import usuario.Usuario;
 import usuario.cliente.Cliente;
 import usuario.empleado.Empleado;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -80,7 +78,7 @@ public class Menu {
         return null;
 
     }
-    public boolean loginEmpleado() {
+    public static Empleado loginEmpleado() {
         String contrasenia, nombre, apellido;
         System.out.println("\n----------------");
         System.out.println("-Iniciar Sesion-");
@@ -108,7 +106,7 @@ public class Menu {
 
                 if (contrasenia.equals(empleado.getContrasenia())) {
                     System.out.println("\n\uD83D\uDC4B Bienvenid@, " + empleado.getNombre());
-                    return true;
+                    return empleado;
                 } else {
                     System.out.println("\n⚠\uFE0F Contraseña incorrecta");
                     i++;
@@ -119,18 +117,9 @@ public class Menu {
         }
 
         System.out.println("⚠\uFE0F Limite de intentos");
-        return false;
+        return null;
 
     }
 
 
-   private boolean validarTelefonoRepetido(ArrayList<? extends Usuario> listaUsuarios, String telefono) {
-       for (Usuario usuario : listaUsuarios) {
-           if (usuario.getTelefono().equals(telefono)) {
-               System.out.println("Ya existe un ususario con ese telefono. Intenta de nuevo");
-               return false;
-           }
-       }
-       return true;
-   }
 }

@@ -1,5 +1,7 @@
 package usuario.cliente;
 
+import tarjeta.credito.TarjetaCredito;
+import tarjeta.debito.TarjetaDebito;
 import usuario.Usuario;
 import utils.RolTrabajo;
 
@@ -8,20 +10,16 @@ import java.io.Serializable;
 
 public class Cliente extends Usuario implements Serializable {
     @Serial
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 3255469587165131566L;
     // Variables
     private String FechaRegistro;
     private String DireccionRegistro;
-    private String SucursalRegistro;
 
     // Constructor
-
-
-    public Cliente(String Id, String nombre, String apellidos, String RFC, String CURP, String direccion, String telefono, String contrasenia, String fechaRegistro, String direccionRegistro, String sucursalRegistro) {
+    public Cliente(String Id, String nombre, String apellidos, String RFC, String CURP, String direccion, String telefono, String contrasenia, String fechaRegistro, String direccionRegistro) {
         super(Id, nombre, apellidos, RFC, CURP, direccion, telefono, contrasenia);
         FechaRegistro = fechaRegistro;
         DireccionRegistro = direccionRegistro;
-        SucursalRegistro = sucursalRegistro;
     }
 
     // GETTERS & SETTERS
@@ -41,13 +39,8 @@ public class Cliente extends Usuario implements Serializable {
         this.DireccionRegistro = DireccionRegistro;
     }
 
-    public String getSucursalRegistro() {
-        return this.SucursalRegistro;
-    }
 
-    public void setSucursalRegistro(String SucursalRegistro) {
-        this.SucursalRegistro = SucursalRegistro;
-    }
+
 
 
     
